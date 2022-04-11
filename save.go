@@ -63,7 +63,6 @@ func init() {
 }
 
 func saveMain(_ *cobra.Command, args []string) error {
-
 	if overwriteSavePath {
 		if err := os.RemoveAll(savePath); err != nil {
 			return err
@@ -126,7 +125,7 @@ func copySrc(src, dest string) error {
 		Skip: func(src string) (bool, error) {
 			return strings.HasSuffix(src, ".git"), nil
 		},
-		AddPermission: 0600,
+		AddPermission: 0o600,
 	}
 	if err := copy.Copy(src, dest, opt); err != nil {
 		return err

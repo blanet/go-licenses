@@ -15,6 +15,9 @@
 package testdata
 
 import (
+	// This import should be ignored, since it's an standard library package.
+	_ "strings"
+
 	// This import should be detected by library_test.go. It has to be a
 	// package that isn't in the standard library and has a separate license
 	// file to the one covering the Trillian repository, so that it's detected
@@ -23,7 +26,4 @@ import (
 
 	// This import should be ignored, since it's an internal dependency.
 	_ "github.com/google/go-licenses/licenses/testdata/internal"
-
-	// This import should be ignored, since it's an standard library package.
-	_ "strings"
 )

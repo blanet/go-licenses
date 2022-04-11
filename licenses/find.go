@@ -23,9 +23,7 @@ import (
 	"strings"
 )
 
-var (
-	licenseRegexp = regexp.MustCompile(`^(?i)(LICEN(S|C)E|COPYING|README|NOTICE).*$`)
-)
+var licenseRegexp = regexp.MustCompile(`^(?i)(LICEN(S|C)E|COPYING|README|NOTICE).*$`)
 
 // Find returns the file path of the license for this package.
 //

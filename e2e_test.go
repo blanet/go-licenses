@@ -77,7 +77,7 @@ func TestCsvCommandE2E(t *testing.T) {
 			got := string(output)
 			goldenFilePath := "licenses.csv"
 			if *update {
-				err := ioutil.WriteFile(goldenFilePath, output, 0600)
+				err := ioutil.WriteFile(goldenFilePath, output, 0o600)
 				if err != nil {
 					t.Fatalf("writing golden file: %s", err)
 				}
